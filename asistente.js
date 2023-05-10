@@ -14,26 +14,26 @@ if (annyang) {
     var commands = {
         'que planes para hoy': function(){
             utter.text='solo atenderte, en lo que nesecites';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
         },
         'musica': function() {
             utter.text='Abriendo youtube';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
             window.open('https://www.youtube.com/watch?v=WWUoq4RtHV0&t=3898s&start=0', '_blank');
         },
         'spotify': function() {
             
             utter.text='Abriendo spotify';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
             window.location.href = 'spotify:track:https://open.spotify.com/track/1Rl25VpYAmwet3uJrBBVbF?si=110abcb25a204161'; // Cambia el código de la canción a la que quieras reproduci
 
         },
         'informacion': function(concepto) {
             utter.text = 'que informacion desea que busque?';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
             //Guarda el nombre que le decimos por voz.
             annyang.addCallback('result', function (phrases) {
@@ -48,24 +48,29 @@ if (annyang) {
             });
         },
         'como te llamas': function () {
-            utter.text = 'soy any, tu asistente virtual';
-            utter.voice = voices[1];
+            utter.text = 'soy Jarvis, tu asistente virtual';
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
         },
-        'hola ani': function () {
-            utter.text = 'Hola John';
+        'jarvis': function () {
+            utter.text = 'como esta señor, que hacemos hoy?';
             //Setea la voz que queremos usar en base a nuestra lista.
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
         },
         'como estas': function () {
-            utter.text = 'Muy bien!';
-            utter.voice = voices[1];
+            utter.text = 'Muy bien señor! y usted?';
+            utter.voice = voices[6];
+            window.speechSynthesis.speak(utter);
+        },
+        'perfecto': function () {
+            utter.text = 'eso me alegra señor';
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
         },
         'hola': function () {
             utter.text = 'hola, cual es tu nombre?';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
             //Guarda el nombre que le decimos por voz.
             annyang.addCallback('result', function (phrases) {
@@ -80,7 +85,7 @@ if (annyang) {
         },
         'planes': function(){
             utter.text='solo atenderte, en lo que nesecites';
-            utter.voice = voices[1];
+            utter.voice = voices[6];
             window.speechSynthesis.speak(utter);
         }
     }

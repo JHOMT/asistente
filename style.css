@@ -1,0 +1,105 @@
+body{
+    background-size: cover;
+    background-image: url('https://i.pinimg.com/564x/94/d0/17/94d0177a127a7f2f90a9ffb76897afda.jpg');
+    background-repeat: no-repeat;            
+}
+header{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    margin: auto;
+}
+h1{
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-family: italic;
+}
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 7%;
+}
+main div{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+}
+button{
+    border: 0 solid;
+    outline-color: rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to bottom, #ff5f5f, #ff9393); /* Gradiente lineal */
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    font-size: 100px;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2); /* color de fondo con transparencia */
+    backdrop-filter: blur(1px); /* filtro de vidrio con un radio de desenfoque de 10px */
+
+}
+button:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 2px #427388;
+    background-color: #f00; /* Color de fondo al pasar el cursor */
+    cursor: pointer;
+    border-radius: none;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* color de fondo con transparencia */
+    backdrop-filter: blur(1px); /* filtro de vidrio con un radio de desenfoque de 10px */
+}
+.iconos-redes {
+    justify-content: center;
+    font-size: 30px;
+    top: 30px;
+    gap: 10px;
+    margin: 5px;
+}
+.fa-brands{
+    color: #000000;
+    margin-left: 19px;
+}
+.copyright{
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Foldit', cursive;
+    font-family: 'Lemonada', cursive;
+    font-family: 'Luxurious Script', cursive;
+    font-family: 'Monoton', cursive;
+    font-family: 'Nosifer', cursive;
+    font-family: 'Shrikhand', cursive;
+}
