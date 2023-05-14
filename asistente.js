@@ -59,6 +59,36 @@ if (annyang) {
                 window.speechSynthesis.speak(utter);
             });
         },
+        'que hora es': function(concepto){
+            const horaActual = new Date().toLocaleTimeString();
+            const fechaActual = new Date().toLocaleDateString();
+            utter.text = 'son las '+ horaActual + ' del ' + fechaActual;
+            utter.voice = voices[6];
+            window.speechSynthesis.speak(utter);
+        },
+        'donde estoy': function(concepto){
+            // Obtener la ubicación actual
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const latitud = position.coords.latitude;
+                const longitud = position.coords.longitude;
+              // Utilizar servicios de geocodificación para obtener el nombre de la ubicación
+                fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitud}&lon=${longitud}&format=json`)
+                .then(response => response.json())
+                .then(data => {
+                    const ubicacionActual = data.display_name;
+                    // Actualizar la respuesta de voz para incluir la hora, fecha y ubicación actual
+                    utter.text = 'Estamos en' +ubicacionActual;
+                    utter.voice = voices[6];
+                    window.speechSynthesis.speak(utter);
+                })
+                .catch(error => {
+                  // En caso de error al obtener la ubicación, solo se anuncia la hora y fecha actual
+                    utter.text = 'No pude obtener tu ubicación.';
+                    utter.voice = voices[6];
+                    window.speechSynthesis.speak(utter);
+                });
+            });
+        },              
         'como te llamas': function () {
             utter.text = 'soy Jarvis, tu asistente virtual';
             utter.voice = voices[6];
