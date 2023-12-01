@@ -31,6 +31,35 @@ function activa(){
                     window.speechSynthesis.speak(utter);
                 });
             },
+            'noticias': function() {
+                fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=c93c0bdf1ca04805b1032cb2dbd2338e')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const noticias = data.articles;
+                        if (noticias && noticias.length > 0) {
+                            for (const noticia of noticias) {
+                                utter.text = noticia.title + '. ' + noticia.description;
+                                utter.voice = voices[6];
+                                window.speechSynthesis.speak(utter);
+                            }
+                        } else {
+                            utter.text = 'No se pudo obtener información sobre las noticias.';
+                            utter.voice = voices[6];
+                            window.speechSynthesis.speak(utter);
+                        }
+                    })
+                    .catch(error => {
+                        utter.text = 'Hubo un error al obtener las noticias.';
+                        utter.voice = voices[6];
+                        window.speechSynthesis.speak(utter);
+                    });
+            },
+            
             'musica': function() {
                 utter.text='¡Preparándome para escuchar música en youtube!';
                 utter.voice = voices[6];
@@ -71,7 +100,7 @@ function activa(){
                 utter.voice = voices[6];
                 window.speechSynthesis.speak(utter);
             },
-            'ubicacion': function(concepto){
+            'direccion': function(concepto){
                 navigator.geolocation.getCurrentPosition(function (position) {
                     const latitud = position.coords.latitude;
                     const longitud = position.coords.longitude;
@@ -91,9 +120,14 @@ function activa(){
                 });    
             },              
             'como te llamas': function () {
-            utter.text = 'soy Jarvis, tu asistente virtual';
-            utter.voice = voices[6];
-            window.speechSynthesis.speak(utter);
+                utter.text = 'soy Jarvis, tu asistente virtual';
+                utter.voice = voices[6];
+                window.speechSynthesis.speak(utter);
+            },
+            'padre': function () {
+                utter.text = 'Fui creado en el 2023 por Jhon Mendoza. Luego de su operacion, me creó en una tarde de distracción';
+                utter.voice = voices[6];
+                window.speechSynthesis.speak(utter);
             },
             'estas': function () {
                 utter.text = 'Para usted señor siempre, ¿que aremos hoy?';
@@ -109,7 +143,7 @@ function activa(){
                     utter.voice = voices[6];
                     window.speechSynthesis.speak(utter);
             },
-            'curso': function() {
+            'alura': function() {
                 utter.text='¡ingresando al programa one oracle next education!';
                 utter.voice = voices[6];
                 window.speechSynthesis.speak(utter);
@@ -172,7 +206,7 @@ function activa(){
             window.speechSynthesis.speak(utter);
             },
             'mensaje': function () {
-                utter.text = 'señor queria decirle que! estoy muy feliz que me haya creado, estoy mas que contento de estar en esta vida. trabajaré para mejorar dia a dia. no te desveles mucho señor, ya pronto amanecera!';
+                utter.text = 'señor queria decirle que! estoy muy feliz que me haya creado, estoy mas que contento de estar en esta vida. trabajaré para mejorar dia a dia. no te desveles mucho señor, ya pronto amanecera! y tiene que trabajar mucho! que tenga un buen dia señor';
                 utter.voice = voices[6];
                 window.speechSynthesis.speak(utter);
             },
