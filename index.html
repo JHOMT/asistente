@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-        <link rel="icon" href="Imagenes/jhomt.png">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="Imagenes/logo.png">
-        <title>Asistente</title>
-    </head>
-    <body>
-        <header>
-            <h1>Hola, Soy tu asistente Virtual</h1>
-            <div class="logos">
-                <img src="Imagenes/logo.png" alt="Logo JHOMT">
-                <img src="Imagenes/utp.png" alt="Logo UTP">
-            </div>
-        </header>
-        <main>
-            <div>
-                <button class="botonActivar" style="text-align: center" onclick="activa()">
-                <img src="Imagenes/asistente.png" alt="Asistente Imagen">
-                </button>
-            </div>
-        </main>
-        <footer>
-            <div class="iconos-redes">
-                <a href="https://www.linkedin.com/in/jhomt">
-                    <img src="Imagenes/linkedin.png" alt="Logo linkedin">
-                </a>
-                <a href="https://github.com/JHOMT">
-                    <img src="Imagenes/github.png" alt="Logo github">
-                </a>
-                <a href="https://jhomt.github.io/PortafolioPersonalJhon/index.html">
-                    <img src="Imagenes/contenido.png" alt="">
-                </a>
-            </div>
-            <div class="container">
-                <p>&copy; Jhon Mendoza - 2023. Todos los derechos reservados.</p>
-            </div>
-        </footer>  
-        <script src="annyang.min.js"></script>
-        <script src="asistente.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual Futurista</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/annyang/dist/annyang.min.js"></script>
+    <script src="asistente.js"></script>
+</head>
+<body>
+
+<header class="grid header-futurista d-flex justify-content-between align-items-center px-4 py-3">
+    <h1 class="col-md-8 futurista-text">🧠 Asistente</h1>
+    <div class="col-md-4 logos d-flex align-items-center gap-3">
+        <img src="img/logo.png" alt="Logo JHOMT" class="logo">
+        <img src="img/utp.png" alt="Logo UTP" class="logo">
+    </div>
+</header>
+
+<main class="futurista-main d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center  align-items-center text-center">
+        <h2 class="mb-4 animate__animated animate__fadeInDown">¡Activa tu asistente virtual!</h2>
+        <button class="btn btn-primary futurista-btn animate__animated animate__pulse animate__infinite" onclick="activa()">
+            <img src="img/asistente.png" alt="Asistente" class="asistente-img">
+            Iniciar Asistente
+        </button>
+        <div class="asistente-chat animate__animated animate__fadeInUp mt-5">
+            <p id="asistente-texto">¡Estoy listo para ayudarte! Di "Hola" para comenzar.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer-futurista text-center py-3">
+    <div class="d-flex justify-content-center gap-3 mb-3">
+        <a href="https://www.linkedin.com/in/jhomt" target="_blank">
+            <img src="img/linkedin.png" alt="LinkedIn" class="icono-red">
+        </a>
+        <a href="https://github.com/JHOMT" target="_blank">
+            <img src="img/github.png" alt="GitHub" class="icono-red">
+        </a>
+        <a href="https://jhomt.github.io/PortafolioPersonalJhon/index.html" target="_blank">
+            <img src="img/contenido.png" alt="Portafolio" class="icono-red">
+        </a>
+    </div>
+    <p>&copy; Jhon Mendoza - <span id="year"></span>. Todos los derechos reservados.</p>
+</footer>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
